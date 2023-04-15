@@ -24,6 +24,15 @@ app.use(express.urlencoded({ extended: false }))
 //     console.log(`Unable to connect to PG: ${err}`) 
 // }
 
+// CONTROLLERS
+const bandsController = require('./controllers/bands_controller')
+app.use('/bands', bandsController)
+
+const eventsController = require('./controllers/events_controller')
+app.use('/events', eventsController)
+
+const stagesController = require('./controllers/stages_controller')
+app.use('/stages', stagesController)
 
 // ROOT
 app.get('/', (req, res) => {
